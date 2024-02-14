@@ -12,7 +12,6 @@ const Header = () => {
                     <ActiveLink to='/'>Home</ActiveLink>
                     <ActiveLink to='/products'>Products</ActiveLink>
                     <ActiveLink to='/items'>Items</ActiveLink>
-                    <ActiveLink to='/mycart'>My Cart</ActiveLink>
                     <ActiveLink to='/about'>About</ActiveLink>
                 </Nav>
                 <Nav>

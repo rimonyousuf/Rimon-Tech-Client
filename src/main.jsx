@@ -11,7 +11,6 @@ import Home from './components/Home/Home';
 import Products from './components/Products/Products';
 import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
-import MyCart from './components/MyCart/MyCart';
 import About from './components/About/About';
 import Items from './components/Items/Items';
 
@@ -32,10 +31,6 @@ const router = createBrowserRouter([
         path: '/items',
         element: <Items></Items>,
         loader: ()=> fetch('http://localhost:5000/items')
-      },
-      {
-        path: '/mycart',
-        element: <MyCart></MyCart>
       },
       {
         path: '/about',

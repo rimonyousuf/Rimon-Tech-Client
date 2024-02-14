@@ -2,9 +2,9 @@ import { Button, Card, CardGroup, ListGroup, Modal } from "react-bootstrap";
 import './Item.css'
 import { useState } from "react";
 
-const Item = ({ item }) => {
+const Item = ({ item, handleDeleteItem }) => {
 
-    const { image, name, brand, category, price, description } = item
+    const { _id, image, name, brand, category, price, description } = item
 
     const [showModal, setShowModal] = useState(false);
 
@@ -28,7 +28,7 @@ const Item = ({ item }) => {
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-center gap-4">
                     <Button onClick={handleDetailsClick} variant="primary">Details</Button>
-                    <Button variant="success">Add to cart</Button>
+                    <Button onClick={()=>handleDeleteItem(_id)} variant="danger">Delete</Button>
                 </Card.Footer>
             </Card>
 
@@ -40,7 +40,7 @@ const Item = ({ item }) => {
                     <p>{description}</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={handleCloseModal}>
+                    <Button variant="success" onClick={handleCloseModal}>
                         Close
                     </Button>
                 </Modal.Footer>
