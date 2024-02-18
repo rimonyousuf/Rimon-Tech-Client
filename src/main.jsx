@@ -13,6 +13,7 @@ import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
 import About from './components/About/About';
 import Items from './components/Items/Items';
+import UpdateItem from './components/UpdateItem/UpdateItem';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
         path: '/items',
         element: <Items></Items>,
         loader: ()=> fetch('http://localhost:5000/items')
+      },
+      {
+        path: '/updateItem/:id',
+        element: <UpdateItem></UpdateItem>,
+        loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
       },
       {
         path: '/about',

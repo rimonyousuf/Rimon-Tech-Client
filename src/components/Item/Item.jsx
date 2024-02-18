@@ -1,6 +1,7 @@
 import { Button, Card, CardGroup, ListGroup, Modal } from "react-bootstrap";
 import './Item.css'
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({ item, handleDeleteItem }) => {
 
@@ -28,7 +29,10 @@ const Item = ({ item, handleDeleteItem }) => {
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-center gap-4">
                     <Button onClick={handleDetailsClick} variant="primary">Details</Button>
-                    <Button onClick={()=>handleDeleteItem(_id)} variant="danger">Delete</Button>
+                    <Button onClick={() => handleDeleteItem(_id)} variant="danger">Delete</Button>
+                    <Link to={`/updateItem/${_id}`}>
+                        <Button variant="warning text-white">Update</Button>
+                    </Link>
                 </Card.Footer>
             </Card>
 
@@ -40,7 +44,7 @@ const Item = ({ item, handleDeleteItem }) => {
                     <p>{description}</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="success" onClick={handleCloseModal}>
+                    <Button variant="danger" onClick={handleCloseModal}>
                         Close
                     </Button>
                 </Modal.Footer>
